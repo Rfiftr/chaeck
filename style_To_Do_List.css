@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@600&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Assistant', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 6px;
+
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgb(207, 207, 207);
+}
+
+#root {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+
+/* navbar*/
+.nav-container {
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+}
+
+
+.menu-button {
+    height: 20px;
+    padding: 8px;
+    transition: all 0.2s;
+}
+
+.menu-button:hover {
+    border-radius: 50%;
+    background-color: #efefef;
+}
+
+.header-time {
+    color: rgb(70, 120, 111);
+}
+
+
+
+/* list */
+.list {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    background-image: url('./images/bg-list.jpg');
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 12px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item:hover {
+    background-color: #edebeb;
+}
+
+.item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-title {
+    font-size: 1.3rem;
+    margin-right: 20px;
+}
+
+.header-item-click {
+    text-decoration: line-through;
+}
+
+.item-date {
+    position: relative;
+    float: right;
+    top: 10px;
+    font-size: 0.6rem;
+    margin-left: 5px;
+}
+
+.item-body {
+    display: none;
+    
+}
+
+.item-separator {
+    width: 100%;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.item-paragraph {
+    padding: 0 40px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.done-button {
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 10px;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgb(178, 70, 67);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.done-button-click {
+    background-color: rgb(38, 131, 86)
+}
+
+
+
+
+
+
+
+/* tools */
+.tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+    position: sticky;
+    bottom: 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px -8px 24px;
+}
+
+.add-item {
+    width: 50px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+.remove-item,
+.edit-item {
+    display: none;
+    width: 80px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 20px;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgb(233, 91, 91);
+}
+
+.edit-item {
+    width: 84px;
+    margin-left: 5px;
+    background-color: rgb(0, 123, 255);
+}
+
+
+/*form*/
+/* add item input */
+.input-item-container {
+    display: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid #dcdcdc;
+    box-shadow: -1px 21px 33px 0px #433d40;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    width: 300px;
+}
+
+.close-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    cursor: pointer;
+    border: none;
+    background-color: #ffffff;
+    filter: grayscale(30%);
+}
+
+.close-form:hover {
+    filter: grayscale(0%);
+}
+
+.form-content {
+    text-align: right;
+}
+
+.input-item-container label {
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.input-item-container input, textarea {
+    font-family: 'Assistant', sans-serif;
+    text-align: right;
+    background-color: #f9f9f9;
+    width: 72%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #dcdcdc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.input-item-container input:focus, textarea:focus {
+    background-color: #e6e6e6;
+}
+
+.send-item {
+    background-color: #007BFF;
+    float: left;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin-left: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-item:hover {
+    background-color: #0056b3;
+}

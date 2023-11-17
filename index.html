@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/to-do-list-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style_To_Do_List.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <div id="root">
+        <nav class="nav-container">
+            <img class="menu-button" src="./images/menu-button.png" alt="menu-burger">
+            <h1 class="header-time"></h1>
+        </nav>
+
+        <div class="list">
+        </div>
+
+        <div class="tools">
+            <div>
+                <button class="remove-item">מחק</button>
+                <button class="edit-item">ערוך</button>
+            </div>
+            <img class="add-item" src="./images/addIcon.png" alt="addIcon">
+        </div>
+
+        <div dir="rtl" class="input-item-container">
+            <img class="close-form" src="./images/close-form-icon.png" alt="close-form-icon">
+            <label >
+                כותרת:
+                <input class="input-item-title" type="text">    
+            </label>
+            <label>
+                משימה:
+                <textarea class="input-item-text" type="text"></textarea>   
+            </label>
+            <button class="send-item">שמור</button>
+        </div>
+    </div>
+
+    <script src="./list.js"></script>
+</body>
+</html>

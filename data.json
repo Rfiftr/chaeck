@@ -1,0 +1,32 @@
+{
+    "tasks": [
+        {
+            "id": 1,
+            "title": "this is first task",
+            "text": "למה צריך לעשות קניות אם אין צורך במוצרים",
+            "completed": false,
+            "date": ""
+        },
+        {
+            "id": 2,
+            "title": "this is second task",
+            "text": "המטרה כן חשובה אבל כשאין אחת כזאת עדיף להתחיל אפילו בלי מטרה",
+            "completed": false,
+            "date": ""
+        },
+        {
+            "id": 3,
+            "title": "this is thirs task",
+            "text": "מומלץ להכין משהו טעים שכולם אוהבים",
+            "completed": false,
+            "date": ""
+        },
+        {
+            "id": 4,
+            "title": "this is i dont now task",
+            "text": "more somthing",
+            "completed": false,
+            "date": ""
+        }
+    ]
+}
