@@ -1,5 +1,6 @@
 let todoList = { tasks: [] }
 const menuButton = document.querySelector('.menu-button')
+const menu = document.querySelector('.menu')
 const formContainer = document.querySelector('.input-item-container')
 const listContainer = document.querySelector('.list')
 const buttonShowForm = document.querySelector('.add-item')
@@ -14,16 +15,25 @@ let object
 let currentDate
 
 
-/**
- * פתיחת/סגירת תפריט
- */
+//מאזין ללחיצה על הרקע
+listContainer.addEventListener('click', closeMenu)
+
+
+
+//מאזין ללחיצה על השלוש נקודות
 menuButton.addEventListener('click', openMenu)
 
+
+//פתיחת התפריט בלחיצה על השלוש נקודות
 function openMenu() {
-    
+    //הגובה נקבע לפי כמות הפרטים שיש בתפריט כל אחד 53
+    menu.style.height = menu.style.height === '106px' ? closeMenu() : '106px'
 }
 
-
+//סגירת התפריט בלחיצה על המסך
+function closeMenu() {
+    menu.style.height = '0'
+}
 
 
 
@@ -73,33 +83,30 @@ function saveToLocalStorage() {
 }
 
 
-// הוספת משימה למעערך בלחיצה על הכפתור
+//מאזין אירועים להוספת משימה
 sentItemElement.addEventListener('click', addItem)
 
-
+// פונקציה להוספת משימה למערך 
 function addItem() {
-
-
     if (!object) {
         const item = {
             id: todoList.tasks.length + 1,
             title: formTitle.value,
             text: formText.value,
             compleited: false,
-            date: getCurrentDate()
+            date: getCurrentDate() + ' :נוצר בתאריך'
         }
         todoList.tasks.push(item)    
     } else {
         object.title = formTitle.value
         object.text = formText.value
-        object.date = getCurrentDate()
+        object.date = getCurrentDate() + ' :נערך בתאריך'
     }
     saveToLocalStorage()
     formContainer.style.display = 'none'
     listContainer.style.filter = 'blur(0px)'
     updateUi()
     object = undefined
-    console.log(todoList)
 }
 
 
@@ -181,10 +188,10 @@ function setStatusItem(index, btn, h1) {
 function getCurrentDate() {
     currentDate = new Date()
 
-    let month = currentDate.getMonth() + 1
     let day = currentDate.getDate()
+    let month = currentDate.getMonth() + 1
     let year = currentDate.getFullYear()
-    let formatDate = month + '/' + day + '/' + year
+    let formatDate = day + '/' + month + '/' + year
 
     return formatDate
 }
@@ -217,7 +224,7 @@ function updateUi() {
         //אובייקט תאריך
         const itemDate = document.createElement('p')
         itemDate.classList.add('item-date')
-        itemDate.textContent = getCurrentDate() + ' :נוצר בתאריך'
+        itemDate.textContent = item.date
         
         const itemDoneBtn = document.createElement('button')
         itemDoneBtn.classList.add('done-button')
